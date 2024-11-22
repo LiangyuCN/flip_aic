@@ -5,9 +5,7 @@ on:
     branches:
       - main
   pull_request:
-  # schedule: 
-  #   # do a build every day
-  #   - cron: "1 1 * * *"
+  workflow_dispatch: # 添加手动触发器
 
 jobs:
   ufbt-build:
@@ -19,7 +17,7 @@ jobs:
             sdk-channel: dev
           - name: release channel
             sdk-channel: release
-          # You can add unofficial channels here. See ufbt action docs for more info.
+          # You can添加 unofficial channels here. See ufbt action docs for more info.
     name: 'ufbt: Build for ${{ matrix.name }}'
     steps:
       - name: Checkout
